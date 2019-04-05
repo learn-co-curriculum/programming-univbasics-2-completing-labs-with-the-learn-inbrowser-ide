@@ -57,7 +57,7 @@ along.
 Here's an animation showing how we can create a simple program using the Learn
 In-Browser IDE
 
-![Demo Animation](https://curriculum-content.s3.amazonaws.com/programming-univbasics-2/learn-ibide-create-run-ruby-file.gif)
+![Demo Animation](https://curriculum-content.s3.amazonaws.com/programming-univbasics-2/learn-ibide-create-run-ruby-file-sm.gif)
 
 ## ALTERNATIVE: Local Development
 
