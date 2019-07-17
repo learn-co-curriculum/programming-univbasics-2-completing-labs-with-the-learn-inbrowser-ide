@@ -78,6 +78,4 @@ Right now, however, we want to make sure you're focused on "learning Ruby" not
 
 OK, OK, no more delays! You have your tools: `ruby`, the in-browser IDE. You
 know what we're going to study: statements. No more prologue, no more
-introductions. We're going to start off by learning to change the **default
-sequence** of code by introducing **selection statements**. The first statement
-will be `if...end`.
+introductions. We're going to start off by working with statements.
