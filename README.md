@@ -1,81 +1,107 @@
-# Programming as Conversation 2: Using Learn In-Browser IDE
+# Programming as Conversation 2: Completing Labs with the Learn In-Browser IDE
 
 ## Learning Goals
 
-- Provide the command to run a file through Ruby
-- Compare running a Ruby file versus using IRB
-- Run a Ruby program in the Learn In-Browser IDE
+- Introduce test-driven lessons, also known as labs
+- Navigate and solve a lab using the In-Browser IDE
 
 ## Introduction
 
-Thus far, we have been using Ruby's IRB inside of the Learn In-Browser IDE.  As
-a quick reminder IDE stands for Integrated Development Environment: a set of
-tools that lets you read, write, and run code.  In "Programming as Conversation
-1" we were clicking in the small, black window at the bottom (the Terminal) and
-were running IRB there. Here we'll start using the rest of the IDE.
+All the lessons so far have been what we refer to as "Readmes" - lessons that
+contain information on a specific topic. Throughout this course, you'll also see
+lessons that require to write code.
 
-When we were writing simple expressions, we could have a direct conversation
-with Ruby in IRB. We didn't really need to save our work as a quick copy and
-paste was sufficient to get our world loaded back up.
+To help ensure you've written valid code, some lessons include tests. This way,
+you'll get immediate feedback as you learn to write code. These test-driven
+lessons are known as labs. Later on, we will go into more detail on how labs
+work and how to work through the more complex ones. For now, we're going to use
+labs to practice some of the basics of code. In this lab, we'll walk through
+solving a test for using `puts`.
 
-However, we're going to start writing longer programs now and we're going to be
-quite cross if we find our program's code missing. In this lesson, we'll
-demonstrate how to create and run a Ruby file.
+## Solving this Lab
 
-## Provide the Command to Run a File Through Ruby
+In this lesson's main directory is a file, `puts_challenge.rb`. It contains a
+single `puts` statement. Running this file will produce the following message
+in the terminal:
 
-To tell Ruby to "read and run" a file, we use the command:
+```sh
+Goodbye livingroom
+```
 
-`ruby name_of_file`
+Also contained in this lesson is a `spec` folder. This is where our test is.
+Don't worry about the code inside, it probably won't make sense yet. All we
+need to know right now is how to use this test.
 
-By convention, as Ruby developers, we like to put `.rb` at the end of a file
-name. It's not required, but it's helpful to remind us that the contents are
-meant for **R**u**B**y. Eventually you might learn dozens of programming
-languages, and it's helpful to have a little visual clue about which language
-knows how to read the conversation recorded inside.
+**To run tests in all Learn labs, type `learn` in the terminal**
 
-For example:
+Typing `learn` in the terminal for this lab will run the test and let us know
+what we need to do to pass it. The terminal should produce something close to
+the following:
 
-`ruby demo.rb`
+```sh
+The puts_challenge.rb file
+  should output 'Hello World' when run (FAILED - 1)
 
-would be a typical command.
+Failures:
 
-## Compare Running a Ruby File Versus Using IRB
+  1) The puts_challenge.rb file should output 'Hello World' when run
+     Failure/Error: expect { require_relative "../puts_challenge.rb" }.to output(/Hello World/).to_stdout
 
-When you run `ruby name_of_file.rb`, it's the same as if you typed in all the
-contents of `name_of_file` into IRB. Any `puts` calls will print things out,
-any _expression_ will be evaluated, and any _statements_ will be processed
-according to the rules of Ruby. Also, if anything goes wrong, Ruby will print
-an error message which will tell you which line in the file had the problem.
+       expected block to output /Hello World/ to stdout, but output "Goodbye Livingroom\n"
+       Diff:
+       @@ -1,2 +1,2 @@
+       -/Hello World/
+       +Goodbye Livingroom
 
-Remember, Ruby is not your enemy. It's your conversational partner and if you
-say something it doesn't understand, it does its best to tell you how to help it
-along.
+     # ./spec/puts_spec.rb:5:in `block (2 levels) in <top (required)>'
 
-## Run a Ruby Program in the Learn In-Browser IDE
+Finished in 0.01699 seconds (files took 0.11715 seconds to load)
+1 example, 1 failure
 
-Here's an animation showing how we can create a simple program using the Learn
-In-Browser IDE
+Failed examples:
 
-![Demo Animation](https://curriculum-content.s3.amazonaws.com/programming-univbasics-2/learn-ibide-create-run-ruby-file-sm.gif)
+rspec ./spec/puts_spec.rb:4 # The puts_challenge.rb file' should output 'Hello World' when run
+```
 
-## ALTERNATIVE: Local Development
+The contents of this message are full of useful information. Actually, the first
+part tells us exactly what we need to do:
 
-If you're familiar with the terminal and CLI environment and would prefer to
-follow the lessons on your local computer, feel free to do so instead of using
-the Learn In-Browser IDE.
+```sh
+The puts_challenge.rb file
+  should output 'Hello World' when run (FAILED - 1)
+```
 
-We've made this module runnable in the In-Browser IDE so that you don't have to
-learn a lot about the CLI environment or install a lot of engineering tools to
-get going. In time, we'll teach you to install these, of course. And once in a
-Flatiron School cohort, you'll be using them all the time and will leave the
-In-Browser IDE behind.
+Hmmm... reading a little further, we see another clue:
 
-Right now, however, we want to make sure you're focused on "learning Ruby" not
-"learning to setup a development environment."
+```sh
+-/Hello World/
++Goodbye Livingroom
+```
+
+There is even more information in the message we can derive, but it should be
+clear what we need to do - currently, `puts_challenge.rb` is outputting `Goodbye
+Livingroom`.
+
+Modify `puts_challenge.rb` so that it outputs `Hello World` instead.
+
+Once you've done that, run `learn` once more and you should see that the test is
+passing:
+
+```sh
+The puts_challenge.rb file
+  should output 'Hello World' when run
+
+Finished in 0.00274 seconds (files took 0.13134 seconds to load)
+1 example, 0 failures
+```
+
+`0 failures` indicates that everything worked. Good work!
+
+The last step is to submit your solution. Type `learn submit` in the terminal to
+do so.
 
 ## Conclusion
 
-OK, OK, no more delays! You have your tools: `ruby`, the in-browser IDE. You
-know what we're going to study: statements. No more prologue, no more
-introductions. We're going to start off by working with statements.
+Labs will slowly become more and more common and will increase in difficulty
+and complexity as you advance. Keep going! You will look back in amazement as
+things become clearer!
